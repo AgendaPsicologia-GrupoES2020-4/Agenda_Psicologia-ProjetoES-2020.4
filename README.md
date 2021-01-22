@@ -1,24 +1,10 @@
-# README
+# Agenda Psicologia
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Agenda Psicologia é um sistema de agendamento de consultas para psicólogos.
 
-Things you may want to cover:
+O projeto foi desenvolvido na disciplina de Engenharia de Software 2020.4 - UFAPE.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Integrantes do grupo:
+  - Manoel Gustavo
+  - Itamar Bernardo
+  - Fabio Freire
