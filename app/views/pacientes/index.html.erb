@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pacientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pacientes.each do |paciente| %>
+      <tr>
+        <td><%= paciente.nome %></td>
+        <td><%= paciente.cpf %></td>
+        <td><%= paciente.telefone %></td>
+        <td><%= paciente.email %></td>
+        <td><%= link_to 'Show', paciente %></td>
+        <td><%= link_to 'Edit', edit_paciente_path(paciente) %></td>
+        <td><%= link_to 'Destroy', paciente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paciente', new_paciente_path %>
