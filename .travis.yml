@@ -11,4 +11,6 @@ install:
   - yarn
 
 script:
-  
+  - bundle exec rake db:setup
+  - bundle exec rake db:migrate RAILS_ENV=test
+  - bundle exec rails webpacker:compile
