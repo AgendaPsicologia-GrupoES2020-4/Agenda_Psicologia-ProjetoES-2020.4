@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <div class="menu-secao"> 
+      <% if logado? %>
+        <h5>Você esta logado como, <%= usuario_atual.nome %></h5>
+        <%= button_to "Sair", '/logout', method: :delete%>
+      <%end%>
+    </div>
     <%= yield %>
   </body>
 </html>

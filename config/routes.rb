@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   get 'pacientes/index'
   get 'index' => 'pacientes#index'
   
-
   root 'sessions#landing'
 end

@@ -1,5 +1,5 @@
 <h1>Principal</h1>
+<p>Nas proximas interações essa pagina terá a agenda do psicologo</p>
 
-<% if logado? %>
-  <h1>Você esta logado como, <%= usuario_atual.nome %></h1>
-<%end%>
+<%= link_to 'Listagem de pacientes', pacientes_path %>
+
