@@ -1,3 +1,9 @@
 <h1>Welcome</h1>
+
+<% if logado? %>
+    <h1>Você esta logado como, <%= usuario_atual.nome %></h1>
+<%end%>
+
 <%= button_to "Login", '/login', method: :get%>
 <%= button_to "Sign Up", '/psicologos/new', method: :get%>
+ <%= button_to "Sair", '/logout', method: :delete%>
