@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.menu-secao {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.menu-secao h5 {
+  margin-right: 10px;
+}

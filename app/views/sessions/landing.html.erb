@@ -1,0 +1,7 @@
+<h1>Landing do Site</h1>
+<p>Este sistema servirá como agenda para psicólogos organizarem suas consultas</p>
+
+<% if !logado? %>
+    <%= button_to "Login", '/login', method: :get%>
+    <%= button_to "Sign Up", '/psicologos/new', method: :get%>
+<%end%>

@@ -1,0 +1,17 @@
+<h1>Criar conta</h1>
+<%= form_for @psicologo do |f|%>
+  <div> 
+    <%= f.label :crp%>
+    <%= f.text_field :crp%><br>
+  </div>
+  <div> 
+    <%= f.label :nome%>
+    <%= f.text_field :nome%><br>
+  </div>
+  <div> 
+    <%= f.label :senha%>
+    <%= f.password_field :password%><br>
+  </div>
+
+  <%= f.submit %>
+<%end%>
