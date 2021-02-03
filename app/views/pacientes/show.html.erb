@@ -20,5 +20,40 @@
   <%= @paciente.email %>
 </p>
 
+<p>
+  <strong>Endereço:</strong>
+  <%= @paciente.endereco %>
+</p>
+
+<p>
+  <strong>Estado Civil:</strong>
+  <%= @paciente.estado_civil %>
+</p>
+
+<p>
+  <strong>Quantidade de filhos:</strong>
+  <%= @paciente.quant_filhos %>
+</p>
+
+<p>
+  <strong>Histórico de doenças:</strong>
+  <%= @paciente.historico_doencas %>
+</p>
+
+<p>
+  <strong>Medicamentos:</strong>
+  <%= @paciente.medicamentos %>
+</p>
+
+<p>
+  <strong>Fuma?</strong>
+  <%= @paciente.eh_fumante %>
+</p>
+
+<p>
+  <strong>Bebe?</strong>
+  <%= @paciente.ingere_alcool %>
+</p>
+
 <%= link_to 'Edit', edit_paciente_path(@paciente) %> |
 <%= link_to 'Back', pacientes_path %>
