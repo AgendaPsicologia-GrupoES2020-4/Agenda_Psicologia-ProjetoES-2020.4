@@ -11,7 +11,7 @@ class PsicologosController < ApplicationController
     respond_to do |format|
       if @psicologo.id
         session[:user_id] = @psicologo.id
-        format.html { redirect_to '/principal', notice: 'Usuário criado com sucesso!' }
+        format.html { redirect_to '/agenda', notice: 'Usuário criado com sucesso!' }
       else
         format.html { render :new, notice: 'Erro' }
         format.json { render json: @psicologo.errors, status: :unprocessable_entity }
