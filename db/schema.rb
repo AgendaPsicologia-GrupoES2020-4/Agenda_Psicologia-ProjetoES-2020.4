@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_001515) do
   end
 
   create_table "psicologos", force: :cascade do |t|
-    t.integer "crp"
+    t.string "crp"
     t.string "nome"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false

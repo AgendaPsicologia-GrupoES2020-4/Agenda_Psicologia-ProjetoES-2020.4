@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
     else
       # flash.alert = "Usuário ou senha incorreto"
       # redirect_to login_path, alert: "Usuário ou senha incorreto"
-      flash[:alert] = 'Usuário ou senha incorreto'
-      redirect_to login_path
+      # flash[:alert] = 'Usuário ou senha incorreto'
+      redirect_to '/login', :alert => "CRP e/ou senha inválidos"
 
       # redirect_to login_path
       # flash.now[:notice] = 'Successfully checked in'
