@@ -1,5 +1,17 @@
 <h1>Criar conta</h1>
 <%= form_for @psicologo do |f|%>
+   <% if @psicologo.errors.any? %>
+    <div id="error_explanation">
+      <h2>Não foi possível cadastradar sua conta:</h2>
+
+      <ul>
+        <% @psicologo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div> 
     <%= f.label :crp%>
     <%= f.text_field :crp%><br>
