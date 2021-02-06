@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :psicologos, only: [:new, :create] 
-  get 'principal', to: 'psicologos#main'
+  get 'agenda', to: 'psicologos#main'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

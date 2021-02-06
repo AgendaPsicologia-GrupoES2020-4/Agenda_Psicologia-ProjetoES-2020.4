@@ -1,8 +1,10 @@
 <h1>Entrar</h1>
+  <p id="alert" style="color: red;"><%= alert %></p>
+
   <%= form_tag '/login' do %>
-  <%= label_tag :crp%>
-  <%= text_field_tag :crp %>
-  <%= label_tag :senha%>
-  <%= password_field_tag :password%>
-  <%= submit_tag "Entrar"%>
+    <%= label_tag :crp%>
+    <%= text_field_tag :crp %>
+    <%= label_tag :senha%>
+    <%= password_field_tag :password%>
+    <%= submit_tag "Entrar"%>
 <%end%>

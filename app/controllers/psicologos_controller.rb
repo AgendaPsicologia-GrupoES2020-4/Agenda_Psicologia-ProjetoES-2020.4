@@ -7,7 +7,15 @@ class PsicologosController < ApplicationController
 
   def create
     @psicologo = Psicologo.create(params.require(:psicologo).permit(:crp, :nome, :password))
-    session[:user_id] = @psicologo.id
-    redirect_to '/principal'
+    
+    respond_to do |format|
+      if @psicologo.id
+        session[:user_id] = @psicologo.id
+        format.html { redirect_to '/agenda', notice: 'Usuário criado com sucesso!' }
+      else
+        format.html { render :new, notice: 'Erro' }
+        format.json { render json: @psicologo.errors, status: :unprocessable_entity }
+      end
+    end
   end
 end
