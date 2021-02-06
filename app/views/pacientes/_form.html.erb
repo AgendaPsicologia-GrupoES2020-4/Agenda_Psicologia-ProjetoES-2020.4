@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= form.label :estado_civil %>
-    <%= form.text_field :estado_civil %>
+    <%= form.select :estado_civil,['Solteiro', 'Casado','Divorciado','Outros'] %>
   </div>
 
   <div class="field">
     <%= form.label :quant_filhos %>
-    <%= form.text_field :quant_filhos %>
+    <%= form.select :quant_filhos,['0', '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'] %>
   </div>
 
   <div class="field">
@@ -58,12 +58,12 @@
 
   <div class="field">
     <%= form.label :eh_fumante %>
-    <%= form.text_field :eh_fumante %>
+    <%= form.select :eh_fumante,['Sim', 'Não'] %>
   </div>
 
   <div class="field">
     <%= form.label :ingere_alcool %>
-    <%= form.text_field :ingere_alcool %>
+    <%= form.select :ingere_alcool,['Sim', 'Não'] %>
   </div>
 
   <div class="actions">
