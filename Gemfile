@@ -48,6 +48,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'cucumber', "4.1.0"
+  gem 'cucumber-rails', require: false
+  gem 'rspec'
+  gem 'database_cleaner'
 end
 
 group :production do
