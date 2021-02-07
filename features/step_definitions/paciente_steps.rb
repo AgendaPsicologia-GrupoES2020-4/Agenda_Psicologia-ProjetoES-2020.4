@@ -27,7 +27,7 @@ When('Eu preencho o campo de nome, cpf, telefone, email, endereco, historico de 
   fill_in 'paciente[historico_doencas]', with: string6
   fill_in 'paciente[medicamentos]', with: string7
   select string8, from: 'paciente[estado_civil]'
-  select int, from: 'paciente[quant_filhos]'
+  fill_in 'paciente[quant_filhos]', with: int
   select string9, from: 'paciente[eh_fumante]'
   select string10, from: 'paciente[ingere_alcool]'
 end
@@ -51,7 +51,7 @@ And('O paciente com nome, cpf, telefone, email, endereco, historico de doencas, 
   fill_in 'paciente[historico_doencas]', with: string6
   fill_in 'paciente[medicamentos]', with: string7
   select string8, from: 'paciente[estado_civil]'
-  select int, from: 'paciente[quant_filhos]'
+  fill_in 'paciente[quant_filhos]', with: int
   select string9, from: 'paciente[eh_fumante]'
   select string10, from: 'paciente[ingere_alcool]'
   click_button 'criar-paciente'
