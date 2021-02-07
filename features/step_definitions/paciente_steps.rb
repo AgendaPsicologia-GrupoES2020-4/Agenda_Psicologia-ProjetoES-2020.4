@@ -69,3 +69,7 @@ Then('Eu vejo que o paciente com nome {string} foi corretamente deletado') do |s
   expect(page).to have_current_path('/pacientes')
   expect(page).to have_no_content(string)
 end
+
+Then('Eu vejo uma mensagem de erro na criacao do paciente') do 
+  assert_selector('div#error_explanation', text: '')
+end
