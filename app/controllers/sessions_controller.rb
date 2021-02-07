@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def self.search(search)
-    if !search.nil?
+    unless search.nil?
       puts search
     end
   end
