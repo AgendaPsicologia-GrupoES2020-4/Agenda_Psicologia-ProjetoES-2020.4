@@ -40,3 +40,32 @@ Then('Eu vejo que o paciente com nome {string} foi criado') do |string|
   expect(page).to have_content(string)
   expect(page).to have_current_path(pacientes_path + '/' + Paciente.last.id.to_s)
 end
+
+And('O paciente com nome, cpf, telefone, email, endereco, historico de doencas, medicamentos, estado civil, quantidade de filhos, fumante e se ingere alcool, respectivamente preenchidos com {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {int}, {string}, {string} existe') do |string, string2, string3, string4, string5, string6, string7, string8, int, string9, string10|
+  visit '/pacientes/new'
+  fill_in 'paciente[nome]', with: string
+  fill_in 'paciente[cpf]', with: string2
+  fill_in 'paciente[telefone]', with: string3
+  fill_in 'paciente[email]', with: string4
+  fill_in 'paciente[endereco]', with: string5
+  fill_in 'paciente[historico_doencas]', with: string6
+  fill_in 'paciente[medicamentos]', with: string7
+  select string8, from: 'paciente[estado_civil]'
+  select int, from: 'paciente[quant_filhos]'
+  select string9, from: 'paciente[eh_fumante]'
+  select string10, from: 'paciente[ingere_alcool]'
+  click_button 'criar-paciente'
+end
+
+And('Eu estou na pagina de detalhes do paciente com nome {string}') do |string| 
+  expect(page).to have_content(string)  
+end
+
+When('Eu clico em remover paciente') do 
+  click_link 'delete'
+end
+
+Then('Eu vejo que o paciente com nome {string} foi corretamente deletado') do |string|
+  expect(page).to have_current_path('/pacientes')
+  expect(page).to have_no_content(string)
+end
