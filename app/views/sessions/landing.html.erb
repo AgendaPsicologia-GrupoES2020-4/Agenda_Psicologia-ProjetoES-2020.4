@@ -4,4 +4,6 @@
 <% if !logado? %>
     <%= button_to "Login", '/login', method: :get%>
     <%= button_to "Sign Up", '/psicologos/new', method: :get%>
+<% else %>
+    <%= link_to 'Listagem de pacientes', psicologo_pacientes_path(usuario_atual) %>
 <%end%>

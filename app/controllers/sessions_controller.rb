@@ -1,6 +1,26 @@
 class SessionsController < ApplicationController
   skip_before_action :autorizado, only: [:new, :create, :landing]
-  
+
+  def index
+    i = 0
+    @pacientes_array = []
+    @psicologos = Psicologo.all
+    @psicologos.each do |user|
+      user.pacientes.each do |pacien|
+        @pacientes_array[i] = pacien
+        i+=1
+      end
+    end
+    return @pacientes_array
+    Session.search(params[:search])
+  end
+
+  def self.search(search)
+    if search!=nil
+      puts search
+    end
+  end
+
   def new
   end
 
