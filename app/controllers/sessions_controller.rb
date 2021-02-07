@@ -12,11 +12,11 @@ class SessionsController < ApplicationController
       end
     end
     return @pacientes_array
-    Session.search(params[:search])
+    #Session.search(params[:search])
   end
 
   def self.search(search)
-    if search!=nil
+    if !search.nil?
       puts search
     end
   end
