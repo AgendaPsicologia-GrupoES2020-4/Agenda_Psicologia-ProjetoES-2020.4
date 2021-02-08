@@ -11,4 +11,6 @@ class Paciente < ApplicationRecord
   # validates :medicamentos
   validates :eh_fumante, presence: true
   validates :ingere_alcool, presence: true
+  belongs_to :psicologo
+
 end
