@@ -14,16 +14,16 @@
 
   <div> 
     <%= f.label :crp%>
-    <%= f.text_field :crp%><br>
+    <%= f.text_field :crp, id:"crp"%><br>
   </div>
   <div> 
     <%= f.label :nome%>
-    <%= f.text_field :nome%><br>
+    <%= f.text_field :nome, id:"nome"%><br>
   </div>
   <div> 
     <%= f.label :senha%>
-    <%= f.password_field :password%><br>
+    <%= f.password_field :password, id:"password"%><br>
   </div>
 
-  <%= f.submit %>
+  <%= f.submit id:"submit"%>
 <%end%>
