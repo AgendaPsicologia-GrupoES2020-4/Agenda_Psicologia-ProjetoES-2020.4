@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_001515) do
+ActiveRecord::Schema.define(version: 2021_02_07_011948) do
 
   create_table "pacientes", force: :cascade do |t|
     t.string "nome"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_02_03_001515) do
     t.text "medicamentos"
     t.string "eh_fumante"
     t.string "ingere_alcool"
+    t.integer "psicologo_id"
+    t.index ["psicologo_id"], name: "index_pacientes_on_psicologo_id"
   end
 
   create_table "psicologos", force: :cascade do |t|
@@ -36,4 +38,5 @@ ActiveRecord::Schema.define(version: 2021_02_03_001515) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "pacientes", "psicologos"
 end
