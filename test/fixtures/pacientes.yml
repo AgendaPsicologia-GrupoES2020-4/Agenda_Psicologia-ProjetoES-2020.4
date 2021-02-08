@@ -1,10 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nome: MyString
-  cpf: MyString
-  telefone: MyString
-  email: MyString
+paciente_mock:
+  nome: Luis Augusto
+  cpf: 702.345.344-45
+  telefone: (81)99826454
+  email: luis@gmail.com
+  endereco: Av. Coronel Geminiano, 625
+  estado_civil: Solteiro
+  quant_filhos: 3,
+  historico_doencas: 
+  medicamentos: Rivotril
+  eh_fumante: Não
+  ingere_alcool: Sim
+  psicologo_id: psicologo_mock
 
 two:
   nome: MyString
