@@ -1,11 +1,2 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  crp: 1
-  nome: MyString
-  password_digest: MyString
-
-two:
-  crp: 1
-  nome: MyString
-  password_digest: MyString
