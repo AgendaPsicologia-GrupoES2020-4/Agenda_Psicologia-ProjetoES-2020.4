@@ -7,6 +7,12 @@ class PacientesController < ApplicationController
   # GET /pacientes.json
   def index
     @pacientes = @psicologo.pacientes
+    if !(@pacientes[0].nil?)
+      if !(@pacientes[0].psicologo_id == session[:user_id])
+        redirect_to '/agenda'
+      end
+    end
+
   end
 
 
@@ -48,7 +54,7 @@ class PacientesController < ApplicationController
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to psicologo_pacientes_path(@psicologo), notice: 'Paciente was successfully created.' }
+        format.html { redirect_to psicologo_pacientes_path(@psicologo, @paciente), notice: 'Paciente was successfully created.' }
         format.json { render :show, status: :created, location: @paciente }
       else
         format.html { render :new }

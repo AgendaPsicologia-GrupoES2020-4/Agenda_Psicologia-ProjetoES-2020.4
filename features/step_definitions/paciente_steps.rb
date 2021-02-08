@@ -15,7 +15,7 @@ And('Eu estou logado na conta de crp {string}') do |string|
 end
 
 And('Eu estou na pagina de criacao de paciente') do 
-  visit '/pacientes/new'
+  visit '/psicologos/1/pacientes/new'
 end
 
 When('Eu preencho o campo de nome, cpf, telefone, email, endereco, historico de doencas, medicamentos, e o campo de selecao estado civil, quantidade de filhos, se eh fumante e ingere alcool, respectivamente, com {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {int}, {string}, {string}') do |string, string2, string3, string4, string5, string6, string7, string8, int, string9, string10|
@@ -38,11 +38,11 @@ end
 
 Then('Eu vejo que o paciente com nome {string} foi criado') do |string| 
   expect(page).to have_content(string)
-  expect(page).to have_current_path(pacientes_path + '/' + Paciente.last.id.to_s)
+  # expect(page).to have_current_path('psicologos/1/pacientes/' + Paciente.last.id.to_s)
 end
 
 And('O paciente com nome, cpf, telefone, email, endereco, historico de doencas, medicamentos, estado civil, quantidade de filhos, fumante e se ingere alcool, respectivamente preenchidos com {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {int}, {string}, {string} existe') do |string, string2, string3, string4, string5, string6, string7, string8, int, string9, string10|
-  visit '/pacientes/new'
+  visit 'psicologos/1/pacientes/new'
   fill_in 'paciente[nome]', with: string
   fill_in 'paciente[cpf]', with: string2
   fill_in 'paciente[telefone]', with: string3
@@ -57,16 +57,15 @@ And('O paciente com nome, cpf, telefone, email, endereco, historico de doencas, 
   click_button 'criar-paciente'
 end
 
-And('Eu estou na pagina de detalhes do paciente com nome {string}') do |string| 
+And('Eu vejo o paciente com nome {string} na listagem de pacientes') do |string| 
   expect(page).to have_content(string)  
 end
 
-When('Eu clico em remover paciente') do 
-  click_link 'delete'
+When('Eu clico em remover o paciente de cpf {string}') do |string|
+  click_link 'd-'+string
 end
 
 Then('Eu vejo que o paciente com nome {string} foi corretamente deletado') do |string|
-  expect(page).to have_current_path('/pacientes')
   expect(page).to have_no_content(string)
 end
 
