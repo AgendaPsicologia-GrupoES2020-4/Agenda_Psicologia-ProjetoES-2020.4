@@ -29,3 +29,6 @@ Then('Eu vejo uma mensagem de erro informando que o nome nao pode estar vazio') 
   assert_selector('div#error_explanation', text: '')
 end
 
+Then('Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres') do
+  assert_selector('div#error_explanation', text: '')
+end
