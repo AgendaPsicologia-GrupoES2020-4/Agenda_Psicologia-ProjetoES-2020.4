@@ -7,8 +7,8 @@ class PacientesController < ApplicationController
   # GET /pacientes.json
   def index
     @pacientes = @psicologo.pacientes
-    if !(@pacientes[0].nil?)
-      if !(@pacientes[0].psicologo_id == session[:user_id])
+    unless @pacientes[0].nil?
+      unless @pacientes[0].psicologo_id == session[:user_id]
         redirect_to '/agenda'
       end
     end
