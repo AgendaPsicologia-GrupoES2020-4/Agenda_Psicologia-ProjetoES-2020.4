@@ -55,5 +55,10 @@
   <%= @paciente.ingere_alcool %>
 </p>
 
-<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
-<%= link_to 'Back', pacientes_path %>
+
+<% if usuario_atual != nil %>
+  <%= link_to 'Edit', edit_psicologo_paciente_path(@psicologo, @paciente) %> |
+  <%= link_to 'Destroy', [@psicologo, @paciente], id:"delete", method: :delete, data: { confirm: 'Are you sure?' } %> |
+
+<% end %>
+<%= link_to 'Back', psicologo_pacientes_path(@psicologo) %>
