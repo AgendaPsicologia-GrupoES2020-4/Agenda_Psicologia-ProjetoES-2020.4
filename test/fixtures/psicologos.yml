@@ -1,11 +1,2 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-psicologo_mock:
-  crp: 01/1234
-  nome: Julianne
-  password_digest: senha-skksksksks
-
-two:
-  crp: 1
-  nome: MyString
-  password_digest: MyString
