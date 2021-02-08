@@ -72,3 +72,24 @@ end
 Then('Eu vejo uma mensagem de erro na criacao do paciente') do 
   assert_selector('div#error_explanation', text: '')
 end
+
+And('Eu estou na pagina de listagem de pacientes') do 
+  visit '/psicologos/1/pacientes/'
+  expect(page).to have_current_path('/psicologos/1/pacientes/')
+end
+
+When('Eu clico em editar o paciente com cpf {string}') do |string|
+  click_link 'e-'+string
+end
+
+And('Eu preencho o campo de telefone com {string}') do |string|
+  fill_in 'paciente[telefone]', with: string
+end
+
+And('Eu clico em salvar') do 
+  click_button 'criar-paciente'
+end
+
+Then('Eu vejo uma mensagem de erro na atualizacao do paciente') do 
+  assert_selector('div#error_explanation', text: '')
+end
