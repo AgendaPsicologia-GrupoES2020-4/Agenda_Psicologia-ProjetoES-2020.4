@@ -10,7 +10,7 @@ When('Eu crio um psicologo com crp {string}, nome {string} e senha {string}') do
 end
 
 When('Eu clico em criar psicologo') do
-  click_button "submit"
+  click_button "criar"
 end
 
 Then('Eu vejo uma mensagem que o psicologo foi criado com sucesso') do

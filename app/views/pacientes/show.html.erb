@@ -58,5 +58,7 @@
 
 <% if usuario_atual != nil %>
   <%= link_to 'Edit', edit_psicologo_paciente_path(@psicologo, @paciente) %> |
+  <%= link_to 'Destroy', [@psicologo, @paciente], id:"delete", method: :delete, data: { confirm: 'Are you sure?' } %> |
+
 <% end %>
 <%= link_to 'Back', psicologo_pacientes_path(@psicologo) %>
