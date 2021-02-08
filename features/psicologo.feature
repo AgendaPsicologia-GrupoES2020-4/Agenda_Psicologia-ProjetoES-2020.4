@@ -1,6 +1,6 @@
 Feature: Psicologo
   As a psicologo do AgendaPsicologia
-  I want to criar uma conta, remover, mostrar, e atualizar a conta criada
+  I want to criar uma conta, entrar e utilizar as rotas protegidas
   so that Eu nao tenho que fazer isso manualmente
 
   Scenario: Criar um novo psicologo

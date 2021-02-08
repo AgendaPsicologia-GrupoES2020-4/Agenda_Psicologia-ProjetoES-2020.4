@@ -9,8 +9,6 @@
       <th>Cpf</th>
       <th>Telefone</th>
       <th>Email</th>
-      <th>Estado Civil</th>
-      <th>Filhos</th>
 
       <th colspan="3"></th>
     </tr>
@@ -23,10 +21,8 @@
         <td><%= paciente.cpf %></td>
         <td><%= paciente.telefone %></td>
         <td><%= paciente.email %></td>
-        <td><%= paciente.estado_civil %></td>
-        <td><%= paciente.quant_filhos %></td>
         <td><%= link_to 'Show', psicologo_paciente_path(@psicologo, paciente) %></td>
-        <td><%= link_to 'Edit', edit_psicologo_paciente_path(@psicologo, paciente) %></td>
+        <td><%= link_to 'Edit', edit_psicologo_paciente_path(@psicologo, paciente), id:"e-#{paciente.cpf}" %></td>
         <td><%= link_to 'Destroy', [@psicologo, paciente], id:"d-#{paciente.cpf}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Back', root_url %></td>
       </tr>
