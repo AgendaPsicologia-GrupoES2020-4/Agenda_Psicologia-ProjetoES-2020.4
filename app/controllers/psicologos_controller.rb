@@ -50,6 +50,15 @@ class PsicologosController < ApplicationController
     end
   end
 
+  # DELETE /psicologos/1
+  # DELETE /psicologos/1.json
+  def destroy
+    return unless @psicologo.id == session[:user_id]
+
+    @psicologo.destroy
+    redirect_to '/landing'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_psicologo
