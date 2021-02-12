@@ -13,7 +13,7 @@
   <body>
     <div class="menu-secao"> 
       <% if logado? %>
-        <h5>Você esta logado como, <%= usuario_atual.nome %></h5>
+        <h5>Você esta logado como, <%= link_to usuario_atual.nome, "/psicologos/#{usuario_atual.id}" %></h5>
         <%= button_to "Sair", '/logout', method: :delete%>
       <%end%>
     </div>
