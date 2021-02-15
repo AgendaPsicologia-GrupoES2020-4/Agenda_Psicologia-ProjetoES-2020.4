@@ -9,7 +9,7 @@ class PacientesController < ApplicationController
     @pacientes = @psicologo.pacientes
     unless @pacientes[0].nil?
       unless @pacientes[0].psicologo_id == session[:user_id]
-        redirect_to '/agenda'
+        redirect_to agenda_psicologo_path(usuario_atual)
       end
     end
 
@@ -19,7 +19,7 @@ class PacientesController < ApplicationController
   # GET /pacientes/1
   # GET /pacientes/1.json
   def show
-    redirect_to '/agenda' unless usuario_autorizado?
+    redirect_to agenda_psicologo_path(usuario_atual) unless usuario_autorizado?
     return 
   end
 
@@ -30,7 +30,7 @@ class PacientesController < ApplicationController
 
   # GET /pacientes/1/edit
   def edit
-    redirect_to '/agenda' unless usuario_autorizado?
+    redirect_to agenda_psicologo_path(usuario_atual) unless usuario_autorizado?
     return 
   end
 

@@ -6,4 +6,8 @@
     <%= button_to "Sign Up", '/psicologos/new', method: :get%>
 <% else %>
     <%= link_to 'Listagem de pacientes', psicologo_pacientes_path(usuario_atual) %>
+    <br>
+    <%= link_to 'Listagem de sessões', psicologo_sessaos_path(usuario_atual) %>
+
+
 <%end%>

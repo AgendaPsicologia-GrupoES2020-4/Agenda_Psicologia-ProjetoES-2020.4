@@ -12,5 +12,5 @@ class Paciente < ApplicationRecord
   validates :eh_fumante, presence: true
   validates :ingere_alcool, presence: true
   belongs_to :psicologo
-
+  has_many :sessaos, dependent: :destroy
 end

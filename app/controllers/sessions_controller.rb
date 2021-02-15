@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
     if @psicologo && @psicologo.authenticate(params[:password])
       session[:user_id] = @psicologo.id
-      redirect_to '/agenda'
+      redirect_to agenda_psicologo_path(@psicologo.id)
     else
       # flash.alert = "Usuário ou senha incorreto"
       # redirect_to login_path, alert: "Usuário ou senha incorreto"

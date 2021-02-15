@@ -1,0 +1,32 @@
+<%= form_with(model: [@psicologo, sessao], local: true) do |form| %>
+  <% if sessao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sessao.errors.count, "error") %> prohibited this sessao from being saved:</h2>
+
+      <ul>
+        <% sessao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora %>
+    <%= form.time_select :hora %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paciente_id %>
+    <%= form.collection_select(:paciente_id, @psicologo.pacientes, :id, :nome, include_blank: true) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
