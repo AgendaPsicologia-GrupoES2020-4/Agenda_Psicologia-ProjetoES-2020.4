@@ -1,30 +1,19 @@
-<h1>AGENDA PSICOLOGIA</h1>
+<p id="notice"><%= notice %></p>
 
-<%= link_to 'Listagem de pacientes', psicologo_pacientes_path(usuario_atual) %>
-<br>
-<%= link_to 'Listagem de sessões', psicologo_sessaos_path(usuario_atual) %>
-
-<h1>Agenda</h1>
-<%= form_tag agenda_psicologo_path(usuario_atual), :method => 'get' do %>
-  <p>
-    <%= date_field_tag :search, params[:search] %>
-    <%= submit_tag "Buscar" %>
-  </p>
-<% end %>
-
-<p>
-  <% if !@sessaos_dia.nil? and !@sessaos_dia.empty? %>
-  <table border="1">
-    <thead>
+<h1>Sessaos</h1>
+<% if !@psicologo.sessaos.empty? %>
+<table>
+  <thead>
     <tr>
       <th>Data</th>
       <th>Hora</th>
       <th>Paciente</th>
-      </th>
+      <th colspan="3"></th>
     </tr>
-    </thead>
-    <tbody>
-    <% @sessaos_dia.each do |sessao| %>
+  </thead>
+
+  <tbody>
+    <% @sessaos.each do |sessao| %>
       <tr>
         <td><%= (sessao.data).strftime("%d/%m/%Y") %></td>
         <td><%= (sessao.hora).strftime("%H:%M") %></td>
@@ -32,13 +21,13 @@
         <td><%= link_to 'Show', psicologo_sessao_path(@psicologo, sessao) %></td>
         <td><%= link_to 'Edit', edit_psicologo_sessao_path(@psicologo, sessao)%></td>
         <td><%= link_to 'Destroy', [@psicologo, sessao], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+        <td><%= link_to 'Back', agenda_psicologo_path(usuario_atual) %></td>
       </tr>
       <%= %>
     <% end %>
-    </tbody>
-  </table>
-<% end %>
-</p>
+  </tbody>
+</table>
+<%end %>
+<br>
 
-
+<%= link_to 'New Sessao', new_psicologo_sessao_path %>

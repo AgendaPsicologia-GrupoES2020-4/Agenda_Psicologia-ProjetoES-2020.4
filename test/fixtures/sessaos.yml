@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2021-02-11
+  hora: 2021-02-11 22:44:08
+  paciente: one
+  psicologo: one
+
+two:
+  data: 2021-02-11
+  hora: 2021-02-11 22:44:08
+  paciente: two
+  psicologo: two
