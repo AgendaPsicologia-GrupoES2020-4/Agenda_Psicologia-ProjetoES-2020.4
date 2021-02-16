@@ -36,7 +36,7 @@ class PsicologosController < ApplicationController
   end
 
   def self.search(search)
-    if search!=nil
+    if !search.nil?
       puts search
     end
   end

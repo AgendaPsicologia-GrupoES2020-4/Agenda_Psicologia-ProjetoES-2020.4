@@ -38,11 +38,10 @@ end
 
 Then('Eu vejo que o paciente com nome {string} foi criado') do |string| 
   expect(page).to have_content(string)
-  # expect(page).to have_current_path('psicologos/1/pacientes/' + Paciente.last.id.to_s)
 end
 
 And('O paciente com nome, cpf, telefone, email, endereco, historico de doencas, medicamentos, estado civil, quantidade de filhos, fumante e se ingere alcool, respectivamente preenchidos com {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {int}, {string}, {string} existe') do |string, string2, string3, string4, string5, string6, string7, string8, int, string9, string10|
-  visit 'psicologos/1/pacientes/new'
+  visit '/psicologos/1/pacientes/new'
   fill_in 'paciente[nome]', with: string
   fill_in 'paciente[cpf]', with: string2
   fill_in 'paciente[telefone]', with: string3

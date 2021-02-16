@@ -1,5 +1,5 @@
 Given('Eu estou na pagina de cadastrar novo psicologo') do
-  visit "psicologos/new?"
+  visit "/psicologos/new?"
   expect(page).to have_current_path("/psicologos/new?")
 end
 
@@ -14,7 +14,7 @@ When('Eu clico em criar psicologo') do
 end
 
 Then('Eu vejo uma mensagem que o psicologo foi criado com sucesso') do
-  expect(page).to have_current_path("/agenda")
+  expect(page).to have_current_path("/psicologos/" +  Psicologo.last.id.to_s + "/agenda")
 end
 
 Then('Eu vejo uma mensagem de erro informando que o crp tem menos de sete caracteres') do
