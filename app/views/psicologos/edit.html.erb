@@ -1,0 +1,35 @@
+<h1>Editing Psicologo</h1>
+
+<%= form_for @psicologo do |f|%>
+   <% if @psicologo.errors.any? %>
+    <div id="error_explanation">
+      <h2>Não foi possível atualizar sua conta:</h2>
+
+      <ul>
+        <% @psicologo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div> 
+    <%= f.label :crp%>
+    <%= f.text_field :crp, id:"crp"%><br>
+  </div>
+  <div> 
+    <%= f.label :nome%>
+    <%= f.text_field :nome, id:"nome"%><br>
+  </div>
+  <div> 
+    <%= f.label :senha%>
+    <%= f.password_field :password, id:"password"%><br>
+  </div>
+
+  <%= f.submit id="editar" %>
+<%end%>
+
+<%= link_to 'Show', @psicologo %> |
+<%= link_to 'Back', agenda_psicologo_path(@psicologo.id) %>
+
+
