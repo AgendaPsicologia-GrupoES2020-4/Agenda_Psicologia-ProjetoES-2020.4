@@ -12,6 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2021_02_12_014408) do
 
+  create_table "consulta", force: :cascade do |t|
+    t.string "tipo"
+    t.date "dia"
+    t.time "hora"
+    t.integer "psicologo_id", null: false
+    t.integer "paciente_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["paciente_id"], name: "index_consulta_on_paciente_id"
+    t.index ["psicologo_id"], name: "index_consulta_on_psicologo_id"
+  end
+
   create_table "pacientes", force: :cascade do |t|
     t.string "nome"
     t.string "cpf"
@@ -49,6 +61,8 @@ ActiveRecord::Schema.define(version: 2021_02_12_014408) do
     t.index ["psicologo_id"], name: "index_sessaos_on_psicologo_id"
   end
 
+  add_foreign_key "consulta", "pacientes"
+  add_foreign_key "consulta", "psicologos"
   add_foreign_key "pacientes", "psicologos"
   add_foreign_key "sessaos", "pacientes"
   add_foreign_key "sessaos", "psicologos"
