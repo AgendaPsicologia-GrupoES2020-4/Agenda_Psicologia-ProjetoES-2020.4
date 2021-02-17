@@ -8,7 +8,7 @@ class Sessao < ApplicationRecord
 
   private 
     def validar_data_hora  
-      if data < Date.today 
+      if data < Time.zone.today 
         errors.add(:data, "tem que ser a presente ou futura")
       else 
         hora_atual = Time.now
