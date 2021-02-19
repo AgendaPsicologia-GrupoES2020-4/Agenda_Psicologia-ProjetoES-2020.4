@@ -16,5 +16,22 @@ class PsicologoTest < ActiveSupport::TestCase
   test 'nao deve criar um psicologo com crp vazio' do
     psicologo = Psicologo.new crp:'', nome:'fabio', password:'123456'
     assert_not psicologo.save
-    end
+  end
+
+  test 'nao deve criar um psicologo com senha vazio' do
+    psicologo = Psicologo.new crp:'1234567', nome:'fabio', password:''
+    assert_not psicologo.save
+  end
+
+  test 'deleta um psicologo existente' do
+    psicologo = Psicologo.new crp:'1234567', nome:'fabio', password:'123456'
+    psicologo.save
+    assert psicologo.delete
+  end
+
+  test 'nao deve criar um psicologo com tamanho de senha invalido ' do
+    psicologo = Psicologo.new crp:'1234567', nome:'fabio', password:''
+    assert_not psicologo.save
+  end
+
 end

@@ -10,10 +10,12 @@ class Sessao < ApplicationRecord
     def validar_data_hora  
       if data < Time.zone.today 
         errors.add(:data, "tem que ser a presente ou futura")
-      else 
-        hora_atual = Time.now
-        if (hora.hour < hora_atual.hour or (hora.hour == hora_atual.hour and hora.min < hora_atual.min) )
-          errors.add(:hora, "tem que ser a presente ou futura")
+      else
+        if(data == Time.zone.today)
+          hora_atual = Time.now
+          if (hora.hour < hora_atual.hour or (hora.hour == hora_atual.hour and hora.min < hora_atual.min))
+            errors.add(:hora, "tem que ser a presente ou futura")
+          end
         end
       end
     end
