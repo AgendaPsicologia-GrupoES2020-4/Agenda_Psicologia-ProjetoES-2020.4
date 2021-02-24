@@ -7,8 +7,6 @@ class Paciente < ApplicationRecord
   validates :endereco, presence: true, length: {minimum: 10}
   validates :estado_civil, presence: true, length: {minimum: 5}
   validates :quant_filhos, presence: true
-  # validates :historico_doencas
-  # validates :medicamentos
   validates :eh_fumante, presence: true
   validates :ingere_alcool, presence: true
   belongs_to :psicologo

@@ -52,13 +52,14 @@ class PsicologosController < ApplicationController
     @sessaos_dia = []
     @sessaos = psicologo.sessaos
     @sessaos.each do |sec|
-      if sec.data.strftime("%Y-%m-%d") == data
+      data_sessao = sec.data.strftime("%Y-%m-%d")
+      if data_sessao == data
         @sessaos_dia.push(sec)
-        puts sec.data
       end
 
     end
-    return @sessaos_dia.sort{ |a, b| a.hora <=> b.hora }
+    @sessaos_dia.sort{ |a, b| a.hora <=> b.hora }
+    return @sessaos_dia
   end
 
   def buscar_paciente(id)
