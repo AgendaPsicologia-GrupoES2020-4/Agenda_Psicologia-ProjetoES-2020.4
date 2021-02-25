@@ -32,3 +32,4 @@ Feature: Psicologo
     When Eu crio um psicologo com crp '1234567', nome 'itamar' e senha '12345'
     And Eu clico em criar psicologo
     Then Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres
+

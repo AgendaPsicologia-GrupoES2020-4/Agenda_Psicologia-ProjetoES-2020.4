@@ -63,3 +63,26 @@ end
 Then ('Eu vejo uma mensagem de erro no cadastro da sessao') do
   assert_selector('div#error_explanation', text: '')
 end
+
+And ('Eu estou na pagina de agenda') do
+  visit '/psicologos/1/agenda'
+end
+
+When ('Eu seleciono a data {string}') do |data|
+  fill_in "search",	with: data
+end
+
+And ('Eu clico em buscar') do
+  click_button 'botao-buscar'
+end
+
+Then ('Eu vejo a sessao com data {string} as {string} e paciente {string} nos resultados') do |data, hora, paciente|
+  data.gsub! '/', '-'
+  visit '/psicologos/1/agenda?search='+data+'&commit=Buscar'
+  rescue ActionController::RoutingError
+
+  expect(current_path).to eq('/psicologos/1/agenda?search='+data+'&commit=Buscar') 
+  expect(page).to have_content(data)
+  expect(page).to have_content(hora)
+  expect(page).to have_content(paciente)
+end
