@@ -75,3 +75,10 @@ Then ('Eu vejo uma mensagem de erro informando que o nome é invalido') do
   assert_selector('div#error_explanation', text: '')
 end
 
+And ('Eu prencho o crp com {string}') do |crp|
+  fill_in 'crp', with: crp
+end
+
+Then ('Eu vejo uma mensagem de erro informando que o crp é invalido') do
+  assert_selector('div#error_explanation', text: '')
+end

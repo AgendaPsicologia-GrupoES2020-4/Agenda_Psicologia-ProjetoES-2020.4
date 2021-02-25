@@ -62,4 +62,11 @@ Feature: Psicologo
     And Eu prencho o nome com 'I'
     And Eu clico em atualizar
     Then Eu vejo uma mensagem de erro informando que o nome é invalido
-    
+
+  Scenario: atualizar crp do psicologo invalido
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho o crp com '02'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem de erro informando que o crp é invalido
