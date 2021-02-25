@@ -59,3 +59,7 @@ end
 Then ('Eu vejo uma mensagem informando que a sessao foi corretamente atualizada') do
   assert_selector('p#notice', text: '')
 end
+
+Then ('Eu vejo uma mensagem de erro no cadastro da sessao') do
+  assert_selector('div#error_explanation', text: '')
+end
