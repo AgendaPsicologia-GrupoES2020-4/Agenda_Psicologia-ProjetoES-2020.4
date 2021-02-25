@@ -70,3 +70,8 @@ Then ('Eu vejo que a conta com crp {string} e senha {string} nao existe mais par
 
   assert_selector('p#alert', text: '')
 end
+
+Then ('Eu vejo uma mensagem de erro informando que o nome é invalido') do
+  assert_selector('div#error_explanation', text: '')
+end
+

@@ -54,3 +54,12 @@ Feature: Psicologo
     And Eu estou na pagina de perfil do psicologo
     When Eu clico em remover conta
     Then Eu vejo que a conta com crp '01/1234' e senha '123456' nao existe mais para realizar o login
+
+  Scenario: atualizar nome do psicologo invalido
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho o nome com 'I'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem de erro informando que o nome é invalido
+    
