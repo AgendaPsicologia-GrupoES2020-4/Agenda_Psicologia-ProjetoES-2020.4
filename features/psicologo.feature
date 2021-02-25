@@ -48,3 +48,9 @@ Feature: Psicologo
     And Eu prencho a senha com 'curto'
     And Eu clico em atualizar
     Then Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres
+
+  Scenario: remover conta de psicologo
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em remover conta
+    Then Eu vejo que a conta com crp '01/1234' e senha '123456' nao existe mais para realizar o login

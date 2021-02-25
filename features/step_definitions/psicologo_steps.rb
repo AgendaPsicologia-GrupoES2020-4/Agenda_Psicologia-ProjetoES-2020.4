@@ -56,3 +56,17 @@ end
 And ('Eu prencho a senha com {string}') do |senha|
   fill_in "password", :with => senha
 end
+
+When ('Eu clico em remover conta') do
+  click_link 'delete'
+end
+
+Then ('Eu vejo que a conta com crp {string} e senha {string} nao existe mais para realizar o login') do |crp, senha| 
+  visit '/login'
+
+  fill_in 'crp', with: crp
+  fill_in 'password', with: senha
+  click_button 'login'
+
+  assert_selector('p#alert', text: '')
+end
