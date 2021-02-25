@@ -40,3 +40,11 @@ Feature: Psicologo
     And Eu prencho o nome com 'Itamar Bernardo'
     And Eu clico em atualizar
     Then Eu vejo uma mensagem confirmando que o psicologo foi atualizado
+  
+  Scenario: atualizar psicologo com senha invalida
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho a senha com 'curto'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres

@@ -53,3 +53,6 @@ Then ('Eu vejo uma mensagem confirmando que o psicologo foi atualizado') do
   assert_selector('p#notice', text: '')
 end
 
+And ('Eu prencho a senha com {string}') do |senha|
+  fill_in "password", :with => senha
+end
