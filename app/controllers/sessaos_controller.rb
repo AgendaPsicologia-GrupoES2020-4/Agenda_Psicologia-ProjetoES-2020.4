@@ -11,7 +11,8 @@ class SessaosController < ApplicationController
   def index
     @sessaos = @psicologo.sessaos
       unless @sessaos[0].nil?
-        unless @sessaos[0].psicologo_id == session[:user_id]
+        eh_psicologo_logado = @sessaos[0].psicologo_id == session[:user_id]
+        unless eh_psicologo_logado
           redirect_to agenda_psicologo_path(usuario_atual)
         end
       end
