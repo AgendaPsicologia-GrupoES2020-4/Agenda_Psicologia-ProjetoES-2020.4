@@ -50,3 +50,4 @@ Feature: Sessao
     When Eu seleciono a data '20/03/2021'
     And Eu clico em buscar
     Then Eu vejo a sessao com data '20/02/2021' as '10:20' e paciente 'Joao Pedro' nos resultados
+    

@@ -32,3 +32,24 @@ end
 Then('Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres') do
   assert_selector('div#error_explanation', text: '')
 end
+
+And ('Eu estou na pagina de perfil do psicologo') do
+  visit '/psicologos/1'
+end
+
+When ('Eu clico em editar psicologo') do
+  click_link 'edit'
+end
+
+And ('Eu prencho o nome com {string}') do |nome|
+  fill_in "nome", :with => nome
+end
+
+And ('Eu clico em atualizar') do
+  click_button 'editar'
+end
+
+Then ('Eu vejo uma mensagem confirmando que o psicologo foi atualizado') do
+  assert_selector('p#notice', text: '')
+end
+
