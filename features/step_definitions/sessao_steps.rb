@@ -43,3 +43,19 @@ end
 Then ('Eu vejo uma mensagem informando que a sessao foi corretamente deletada') do 
   assert_selector('p#notice', text: '')
 end
+
+When ('Eu clico em editar') do
+  click_link 'edit'  
+end
+
+And ('Eu altero a hora para {string}') do |hora| 
+  select hora, from: 'sessao_hora_4i'
+end
+
+And ('Eu clico em cadastrar') do
+  click_button 'cadastrar-sessao'
+end
+
+Then ('Eu vejo uma mensagem informando que a sessao foi corretamente atualizada') do
+  assert_selector('p#notice', text: '')
+end
