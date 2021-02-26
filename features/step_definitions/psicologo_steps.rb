@@ -32,3 +32,53 @@ end
 Then('Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres') do
   assert_selector('div#error_explanation', text: '')
 end
+
+And ('Eu estou na pagina de perfil do psicologo') do
+  visit '/psicologos/1'
+end
+
+When ('Eu clico em editar psicologo') do
+  click_link 'edit'
+end
+
+And ('Eu prencho o nome com {string}') do |nome|
+  fill_in "nome", :with => nome
+end
+
+And ('Eu clico em atualizar') do
+  click_button 'editar'
+end
+
+Then ('Eu vejo uma mensagem confirmando que o psicologo foi atualizado') do
+  assert_selector('p#notice', text: '')
+end
+
+And ('Eu prencho a senha com {string}') do |senha|
+  fill_in "password", :with => senha
+end
+
+When ('Eu clico em remover conta') do
+  click_link 'delete'
+end
+
+Then ('Eu vejo que a conta com crp {string} e senha {string} nao existe mais para realizar o login') do |crp, senha| 
+  visit '/login'
+
+  fill_in 'crp', with: crp
+  fill_in 'password', with: senha
+  click_button 'login'
+
+  assert_selector('p#alert', text: '')
+end
+
+Then ('Eu vejo uma mensagem de erro informando que o nome é invalido') do
+  assert_selector('div#error_explanation', text: '')
+end
+
+And ('Eu prencho o crp com {string}') do |crp|
+  fill_in 'crp', with: crp
+end
+
+Then ('Eu vejo uma mensagem de erro informando que o crp é invalido') do
+  assert_selector('div#error_explanation', text: '')
+end

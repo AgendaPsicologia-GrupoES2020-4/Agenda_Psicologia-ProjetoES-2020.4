@@ -16,7 +16,7 @@
 </p>
 
 <% if usuario_atual != nil %>
-  <%= link_to 'Edit', edit_psicologo_sessao_path(@psicologo, @sessao) %> |
+  <%= link_to 'Edit', edit_psicologo_sessao_path(@psicologo, @sessao), id: "edit" %> |
   <%= link_to 'Destroy', [@psicologo, @sessao], id:"delete", method: :delete, data: { confirm: 'Are you sure?' } %> |
 
 <% end %>

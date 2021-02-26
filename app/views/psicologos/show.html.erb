@@ -11,7 +11,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_psicologo_url(@psicologo) %> |
+<%= link_to 'Edit', edit_psicologo_url(@psicologo), id:"edit" %> |
 <%= link_to 'Remover conta', @psicologo, id:"delete", method: :delete, data: { confirm: 'Are you sure?' } %> 
 <br>
 <%= link_to 'Back', agenda_psicologo_path(@psicologo.id) %>

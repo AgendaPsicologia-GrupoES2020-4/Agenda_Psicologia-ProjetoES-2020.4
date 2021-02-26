@@ -32,3 +32,41 @@ Feature: Psicologo
     When Eu crio um psicologo com crp '1234567', nome 'itamar' e senha '12345'
     And Eu clico em criar psicologo
     Then Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres
+
+  Scenario: editar o nome do psicologo
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho o nome com 'Itamar Bernardo'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem confirmando que o psicologo foi atualizado
+  
+  Scenario: atualizar psicologo com senha invalida
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho a senha com 'curto'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem de erro informando que a senha contem menos de seis caracteres
+
+  Scenario: remover conta de psicologo
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em remover conta
+    Then Eu vejo que a conta com crp '01/1234' e senha '123456' nao existe mais para realizar o login
+
+  Scenario: atualizar nome do psicologo invalido
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho o nome com 'I'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem de erro informando que o nome é invalido
+
+  Scenario: atualizar crp do psicologo invalido
+    Given O psicologo com crp '01/1234' existe
+    And Eu estou na pagina de perfil do psicologo
+    When Eu clico em editar psicologo
+    And Eu prencho o crp com '02'
+    And Eu clico em atualizar
+    Then Eu vejo uma mensagem de erro informando que o crp é invalido

@@ -8,7 +8,7 @@
 <%= form_tag agenda_psicologo_path(usuario_atual), :method => 'get' do %>
   <p>
     <%= date_field_tag :search, params[:search] %>
-    <%= submit_tag "Buscar" %>
+    <%= submit_tag "Buscar", id: "botao-buscar" %>
   </p>
 <% end %>
 
