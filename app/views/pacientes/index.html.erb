@@ -22,10 +22,10 @@
         <td><%= paciente.cpf %></td>
         <td><%= paciente.telefone %></td>
         <td><%= paciente.email %></td>
-        <td><%= link_to 'Show', psicologo_paciente_path(@psicologo, paciente) %></td>
-        <td><%= link_to 'Edit', edit_psicologo_paciente_path(@psicologo, paciente), id:"e-#{paciente.cpf}" %></td>
-        <td><%= link_to 'Destroy', [@psicologo, paciente], id:"d-#{paciente.cpf}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Back', agenda_psicologo_path(usuario_atual) %></td>
+        <td><%= link_to 'Mostrar', psicologo_paciente_path(@psicologo, paciente) %></td>
+        <td><%= link_to 'Editar', edit_psicologo_paciente_path(@psicologo, paciente), id:"e-#{paciente.cpf}" %></td>
+        <td><%= link_to 'Deletar', [@psicologo, paciente], id:"d-#{paciente.cpf}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Voltar', agenda_psicologo_path(usuario_atual) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,6 +33,6 @@
 <%end %>
 <br>
 
-<%= link_to 'New Paciente', new_psicologo_paciente_path(@psicologo) %>
+<%= link_to 'Cadastrar Novo Paciente', new_psicologo_paciente_path(@psicologo) %>
 <br>
-<%= link_to 'Back', agenda_psicologo_path(usuario_atual) %>
+<%= link_to 'Voltar', agenda_psicologo_path(usuario_atual) %>
