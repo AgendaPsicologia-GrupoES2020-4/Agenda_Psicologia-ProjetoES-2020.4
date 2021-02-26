@@ -30,9 +30,9 @@
         <td><%= (sessao.data).strftime("%d/%m/%Y") %></td>
         <td><%= (sessao.hora).strftime("%H:%M") %></td>
         <td><%= buscar_paciente(sessao.paciente_id).nome %></td>
-        <td><%= link_to 'Show', psicologo_sessao_path(@psicologo, sessao) %></td>
-        <td><%= link_to 'Edit', edit_psicologo_sessao_path(@psicologo, sessao)%></td>
-        <td><%= link_to 'Destroy', [@psicologo, sessao], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', psicologo_sessao_path(@psicologo, sessao) %></td>
+        <td><%= link_to 'Editar', edit_psicologo_sessao_path(@psicologo, sessao)%></td>
+        <td><%= link_to 'Deletar', [@psicologo, sessao], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
       <%= %>

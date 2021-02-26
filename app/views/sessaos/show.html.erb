@@ -16,8 +16,8 @@
 </p>
 
 <% if usuario_atual != nil %>
-  <%= link_to 'Edit', edit_psicologo_sessao_path(@psicologo, @sessao), id: "edit" %> |
-  <%= link_to 'Destroy', [@psicologo, @sessao], id:"delete", method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Editar', edit_psicologo_sessao_path(@psicologo, @sessao), id: "edit" %> |
+  <%= link_to 'Deletar', [@psicologo, @sessao], id:"delete", method: :delete, data: { confirm: 'Are you sure?' } %> |
 
 <% end %>
-<%= link_to 'Back', psicologo_sessaos_path(@psicologo) %>
+<%= link_to 'Voltar', psicologo_sessaos_path(@psicologo) %>
