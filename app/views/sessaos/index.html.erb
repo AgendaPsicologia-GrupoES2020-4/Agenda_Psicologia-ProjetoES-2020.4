@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "sessaos" %>
 <p id="notice"><%= notice %></p>
 
 <h1>Sessaos</h1>
@@ -18,7 +19,7 @@
         <td><%= (sessao.data).strftime("%d/%m/%Y") %></td>
         <td><%= (sessao.hora).strftime("%H:%M") %></td>
         <td><%= buscar_paciente(sessao.paciente_id).nome %></td>
-        <td><%= link_to 'Show', psicologo_sessao_path(@psicologo, sessao) %></td>
+        <td><%= link_to 'Show', psicologo_sessao_path(@psicologo, sessao)%></td>
         <td><%= link_to 'Edit', edit_psicologo_sessao_path(@psicologo, sessao)%></td>
         <td><%= link_to 'Destroy', [@psicologo, sessao], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Back', agenda_psicologo_path(usuario_atual) %></td>
@@ -31,3 +32,5 @@
 <br>
 
 <%= link_to 'New Sessao', new_psicologo_sessao_path %>
+<br>
+<%= link_to 'Back', agenda_psicologo_path(usuario_atual) %>

@@ -23,3 +23,19 @@
 .menu-secao h5 {
   margin-right: 10px;
 }
+
+tbody {
+  background-color: #fff;
+}
+
+.show {
+  color: #2e2f30;
+}
+
+.edit {
+  color: #ff4500;
+}
+
+.destroy {
+  color: #f00;
+}
