@@ -24,16 +24,16 @@
   margin-right: 10px;
 }
 
-tbody{
+tbody {
     background-color: #fff;
 }
 
-.show{
-    color: #2E2F30;
+.show {
+    color: #2e2f30;
 }
-.edit{
-    color: #FF4500;
+.edit {
+    color: #ff4500;
 }
-.destroy{
-    color: #FF0000;
+.destroy {
+    color: #f00;
 }
