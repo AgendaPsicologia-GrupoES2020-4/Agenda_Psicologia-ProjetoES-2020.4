@@ -25,15 +25,17 @@
 }
 
 tbody {
-    background-color: #fff;
+  background-color: #fff ;
 }
 
 .show {
-    color: #2e2f30;
+  color: #2e2f30;
 }
+
 .edit {
-    color: #ff4500;
+  color: #ff4500;
 }
+
 .destroy {
-    color: #f00;
+  color: #f00;
 }
