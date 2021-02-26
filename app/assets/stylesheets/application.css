@@ -23,3 +23,9 @@
 .menu-secao h5 {
   margin-right: 10px;
 }
+
+tbody{background-color: #ffffff}
+
+.show{color: #2E2F30}
+.edit{color: #FF4500}
+.destroy{color: #FF0000}
